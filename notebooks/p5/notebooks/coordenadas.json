@@ -21,9 +21,8 @@
    "source": [
     "## Metodos\n",
     "Las funciones dentro de clases son llamadas metodos. Son usadas de una forma similar a las funciones. ",
-    "<img src="data/drawing-01.png/>",
     "La imagen de arriba muestra una linea entre el punto A (1,0) y el punto B (4,5). Si quisieran guiar a un amigo suyo para que dibuje la misma linea, les gritarias 'dibuja una linea desde el punto uno-cero hasta el punto cuatro-cinco, porfa.'",
-    "Bueno, por el momento, imaginense que su amigo es una computadora y que quieren guiar a este amiguito digital a que muestre la misma linea en su pantalla. El mismo comando vale (solo esta vez podemos evitar las cordialidades e ir directo al grano). Así sería la forma de hacerlo:",
+    "Bueno, por el momento, imaginense que su amigo es una computadora y que quieren guiar a este amiguito digital a que muestre la misma linea en su pantalla. El mismo comando vale (solo esta vez podemos evitar las cordialidades e ir directo al grano). Así sería la forma de hacerlo:"
    ]
   },
   {
@@ -39,7 +38,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Incluso sin haber estudiado mucho la sintaxis de nuestro lenguaje, el código de arriba debería tener bastante sentido para cualquiera. Le estamos dando un comando (una función) a la maquinita que se llama 'line'. Además, le estamos dando algunos argumentos sobre la forma en la que debería ser dibujada esa linea, desde el punto A al punto B. Si lo pensaramos como una oración, la función es un verbo y los argumentos son los objetos de la oración.",
+    "Incluso sin haber estudiado mucho la sintaxis de nuestro lenguaje, el código de arriba debería tener bastante sentido para cualquiera. Le estamos dando un comando (una función) a la maquinita que se llama 'line'. Además, le estamos dando algunos argumentos sobre la forma en la que debería ser dibujada esa linea, desde el punto A al punto B. Si lo pensaramos como una oración, la función es un verbo y los argumentos son los objetos de la oración."
    ]
   },
   {
@@ -47,8 +46,7 @@
    "metadata": {},
    "source": [
     "La idea sería darnos cuenta que la pantalla de la computadora no es más que una hoja cuadriculada cheta. Cada pixel de la pantalla es una coordenada - dos numeros, uno 'x' (horizontal) y otro 'y' (vertical) - que determina el lugar de un punto en el espacio. Y es nuestro trabajo especificar que figuras y colores van a aparecer en esas coordenadas.",
-    "Sin embargo, hay una trampa. El sistema de coordenadas que nos enseñaron en la escuela (sistema cartesiano) ubica al (0,0) en el centro del eje y apuntando para arriba y el eje x apuntando a la derecha (en la dirección positiva, en la negativa para abajo y para la izquierda). El sistema de coordenadas para los pixeles de una pantalla de computadora, sin embargo, están al revés en el eje y. El (0,0) se puede encontrar arriba a la izquierda con la dirección positiva a la derecha horizontalmente y abajo verticalmente.",
-    "<img src="data/drawing-03.png/>"
+    "Sin embargo, hay una trampa. El sistema de coordenadas que nos enseñaron en la escuela (sistema cartesiano) ubica al (0,0) en el centro del eje y apuntando para arriba y el eje x apuntando a la derecha (en la dirección positiva, en la negativa para abajo y para la izquierda). El sistema de coordenadas para los pixeles de una pantalla de computadora, sin embargo, están al revés en el eje y. El (0,0) se puede encontrar arriba a la izquierda con la dirección positiva a la derecha horizontalmente y abajo verticalmente."
    ]
   },
   {
@@ -56,8 +54,7 @@
    "metadata": {},
    "source": [
     "## Figuras simples",
-    "La mayoria de los ejemplos de programación que van a ver con Processing son visuales por naturaleza. Estos ejemplos, en su núcleo, involucran dibujar figuras y establecer pixeles. Vamos a empezar viendo las cuatro figuras primitivas.",
-    "<img src="data/drawing-04.png/>"
+    "La mayoria de los ejemplos de programación que van a ver con Processing son visuales por naturaleza. Estos ejemplos, en su núcleo, involucran dibujar figuras y establecer pixeles. Vamos a empezar viendo las cuatro figuras primitivas."
     ]
   },
   {
@@ -65,50 +62,42 @@
    "metadata": {},
    "source": [
     "Por cada figura, vamos a preguntarnos que información es requerida para especificar la ubicación y tamaño (y después color) de esa figura y aprenderemos como Processing espera recibir esa información. En los diagramas de abajo, vamos a asumir que el tamaño de nuestra ventana va a ser de 10 pixeles de alto por 10 pixeles de ancho. Esto no es particularmente realista ya que cuando empecemos a programar probablemente vamos a trabajar con ventanas mucho más grandes (10x10 pixeles son apenas unos milimitros del tamaño de la pantalla). Sin embargo, para propositos demostrativos, es bueno trabajar con numeros chicos para ilustrar mejor y de forma más sencilla.",
-    "Un `point()` es la figura más sencilla de todas y un buen lugar donde empezar. Para dibujar un punto, solo necesitamos unas coordenadas x e y.",
-    "<img src="data/drawing-05.png/>"
+    "Un `point()` es la figura más sencilla de todas y un buen lugar donde empezar. Para dibujar un punto, solo necesitamos unas coordenadas x e y."
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Una `line()` no es terriblemente dificil tampoco y solo requiere dos puntos: (x1,y1) y (x2,y2):",
-    "<img src="data/drawing-06.png/>"
+    "Una `line()` no es terriblemente dificil tampoco y solo requiere dos puntos: (x1,y1) y (x2,y2):"
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Una vez que llegamos al dibujar los `rect()`, las cosas se complican un poco. En Processing, un rectangulo es descripto por las coordenadas para su esquina superior izquierda, además de su ancho y altura.",
-    "<img src="data/drawing-07.png/>"
+    "Una vez que llegamos al dibujar los `rect()`, las cosas se complican un poco. En Processing, un rectangulo es descripto por las coordenadas para su esquina superior izquierda, además de su ancho y altura."
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Una segunda manera de dibujar un rectangulo involucra especificar el punto medio, además de su ancho y altura. Si preferimos este metodo, primero debemos indicar que queremos usar el modo 'CENTER' antes de usar la función para el rectángulo en sí. Ojo que Processing es sensible a las mayusculas, igual que Python.",
-    "<img src="data/drawing-08.png/>"
+    "Una segunda manera de dibujar un rectangulo involucra especificar el punto medio, además de su ancho y altura. Si preferimos este metodo, primero debemos indicar que queremos usar el modo 'CENTER' antes de usar la función para el rectángulo en sí. Ojo que Processing es sensible a las mayusculas, igual que Python."
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Finalmente, podemos dibujar un rectángulo con dos puntos (uno para la esquina superior izquierda y uno para la esquina inferior derecha). El modo acá es 'CORNERS'.",
-    "<img src="data/drawing-09.png/>"
+    "Finalmente, podemos dibujar un rectángulo con dos puntos (uno para la esquina superior izquierda y uno para la esquina inferior derecha). El modo acá es 'CORNERS'."
    ]
   },
   {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "Una vez que estemos mas comodos con el concepto de dibujar un rectangulo, dibujar un `ellipse()` es facilisimo. De hecho, es identico a `rect()` la diferencia siendo que un elipse es dibujado donde los limites del rectangulo estarían. El modo por defecto para ellipse() es 'CENTER', en vez de 'CORNER'.",
-    "<img src="data/drawing-09.png/>",
-    "<img src="data/drawing-10.png/>",
-    "<img src="data/drawing-11.png/>"
+    "Una vez que estemos mas comodos con el concepto de dibujar un rectangulo, dibujar un `ellipse()` es facilisimo. De hecho, es identico a `rect()` la diferencia siendo que un elipse es dibujado donde los limites del rectangulo estarían. El modo por defecto para ellipse() es 'CENTER', en vez de 'CORNER'."
    ]
   },
   {
@@ -116,8 +105,7 @@
    "metadata": {},
    "source": [
     "Es importante destacar que estos elipses no se ven particularmente circulares. Processing tiene una metodologia integrada para seleccionar que pixeles deberían ser usados para crear una forma circular. Con el zoom al mango como está aca, obtenemos un puñado de cuadrados en un patrón quasi-circular, pero sin zoom, tendremos un lindo elipse redondo. Processing también nos da el poder de desarrollar nuestros propios algoritmos para colorear pixeles individuales (de hecho, ya podemos imaginar como podríamos hacer esto usando `point` una y otra vez), pero por ahora, nos quedamos satisfechos con dejar que `ellipse` haga todo el laburo.",
-    "Ahora veamos lo que un poco de código con figuras puede lograr en un ambiente mas realista, con una ventana de 200x200. Noten el uso de la función `size()` para especificar el ancho y alto de la ventana.",
-    "<img src="data/dibujito.png/>"
+    "Ahora veamos lo que un poco de código con figuras puede lograr en un ambiente mas realista, con una ventana de 200x200. Noten el uso de la función `size()` para especificar el ancho y alto de la ventana."
    ]
   },
   {
@@ -127,7 +115,7 @@
    "outputs": [],
    "source": [
     "size(200,200)",
-    "rectMode("CENTER")",
+    "rectMode('CENTER')",
     "rect((100,100),20,100)",
     "ellipse((100,70),60,60)",
     "ellipse((81,70),16,32)",
